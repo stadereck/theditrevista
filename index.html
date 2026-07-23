@@ -180,7 +180,7 @@
                     <img src="https://res.cloudinary.com/dhx58lnzb/image/upload/v1784781496/hooderlogoeditpng_pajk2a.png" alt="Logo de EDIT" class="logo-img filter invert">
                     <div class="flex space-x-6 text-2xl">
                         <!-- Only Instagram is visible as requested -->
-                        <a href="https://o" class="hover:text-gray-400 transition" aria-label="Instagram">
+                        <a href="https://www.instagram.com/" target="_blank" class="hover:text-gray-400 transition" aria-label="Instagram">
                             <i class="fa-brands fa-instagram"></i>
                         </a>
                         <!-- Hiding others based on prompt: "la unica red social que aparesca en el footer sea instagram" -->
@@ -254,12 +254,25 @@
             document.getElementById('main-header').classList.remove('opacity-50', 'pointer-events-none');
             document.getElementById('main-content').classList.remove('opacity-50', 'pointer-events-none');
             document.getElementById('main-footer').classList.remove('opacity-50', 'pointer-events-none');
+
+            // Guardar la preferencia en el navegador para que no vuelva a salir
+            localStorage.setItem('privacyAccepted', 'true');
         }
 
         // Initialize state on load
         document.addEventListener('DOMContentLoaded', () => {
-            // Ensure body is non-scrollable when popup is active
-            document.body.classList.add('overflow-hidden');
+            // Verificar si el usuario ya cerró el aviso en una visita anterior
+            if (localStorage.getItem('privacyAccepted') === 'true') {
+                // Si ya aceptó, ocultar todo inmediatamente sin mostrar el popup
+                document.getElementById('privacy-overlay').classList.add('hidden');
+                document.body.classList.remove('overflow-hidden');
+                document.getElementById('main-header').classList.remove('opacity-50', 'pointer-events-none');
+                document.getElementById('main-content').classList.remove('opacity-50', 'pointer-events-none');
+                document.getElementById('main-footer').classList.remove('opacity-50', 'pointer-events-none');
+            } else {
+                // Ensure body is non-scrollable when popup is active
+                document.body.classList.add('overflow-hidden');
+            }
             
             // Lógica para el efecto de achicar el encabezado al hacer scroll
             window.addEventListener('scroll', () => {
