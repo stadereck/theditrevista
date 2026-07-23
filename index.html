@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit - The original social media | Edit</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Roboto:wght@300;400;500;700&display=swap');
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f9f9f9;
+        }
+
+        .font-serif {
+            font-family: 'Playfair Display', serif;
+        }
+
+        .logo-font {
+            font-family: 'Playfair Display', serif;
+            letter-spacing: 0.2em;
+        }
+
+        /* Overlay for Privacy Popup */
+        #privacy-overlay {
+            background-color: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(2px);
+        }
+
+        /* Footer Links Hover */
+        .footer-link {
+            transition: color 0.3s ease;
+        }
+        .footer-link:hover {
+            color: #ccc;
+        }
+
+        /* Utility class for logo sizing */
+        .logo-img {
+            max-width: 200px;
+            height: auto;
+        }
+        .logo-img-large {
+            max-width: 250px;
+            height: auto;
+        }
+    </style>
+</head>
+<body class="flex flex-col min-h-screen relative overflow-hidden"> <!-- Prevent scroll when popup is active -->
+
+    <div id="privacy-overlay" class="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6">
+        <div class="bg-white max-w-4xl w-full max-h-[90vh] overflow-y-auto shadow-2xl relative">
+            <div class="p-8 sm:p-12">
+                <!-- Logo in Popup -->
+                <div class="mb-6 border-b border-black pb-4">
+                    <img src="https://res.cloudinary.com/dhx58lnzb/image/upload/v1784781496/hooderlogoeditpng_pajk2a.png" alt="EDIT Logo" class="logo-img-large">
+                </div>
+                
+                <h2 class="text-2xl font-bold mb-6">Your insider invite</h2>
+                
+                <div class="space-y-6 text-gray-800 text-sm sm:text-base leading-relaxed mb-8">
+                    <p>
+                        Every insider knows that bespoke is always best. EDIT uses technology to tailor our stories to your interests, keeping you up to speed on everything from royal gossip to all the latest high society news. This technology also allows third parties, particularly our trusted luxury advertising partners, to display ads and content that more closely align with your personal style and interests, not to mention giving editors the chance to write more types of features you love. Consider it your chance to have the first look at – and the last word on – all of EDIT's content.
+                    </p>
+                    <p>
+                        We, and our <a href="#" class="underline font-medium">229</a> partners use cookies and similar methods to recognize visitors and remember their preferences. We may also use these technologies to gauge the effectiveness of advertising campaigns, target advertisements, and analyze website traffic. Some of these technologies are essential for ensuring the proper functioning of the service or website and cannot be disabled, while others are optional but serve to enhance the user experience in various ways. <a href="#" class="underline font-medium">Privacy Policy</a>
+                    </p>
+                    <p>
+                        We, in collaboration with our partners, store and/or access information on a device and process your personal data, such as browsing data and device identifiers, for personalised advertising and content, advertising and content measurement, audience research and services development including by using precise geolocation data, and identification through active device scanning. You have the option to withdraw your consent or manage your preferences at any time by selecting the 'Your Privacy Choices' option located in the website footer. To review or object to instances where our partners assert a legitimate interest in utilizing your data, please visit our vendors page. Your preferences will apply only on this website.
+                    </p>
+                </div>
+
+                <!-- Action Buttons -->
+                <div class="flex flex-col sm:flex-row justify-center gap-4 border-t border-gray-200 pt-8 bg-gray-50 -mx-8 -mb-8 px-8 pb-8">
+                    <button onclick="closePrivacyPopup()" class="bg-black text-white font-bold py-3 px-8 text-sm hover:bg-gray-800 transition">I AGREE</button>
+                    <button onclick="closePrivacyPopup()" class="bg-black text-white font-bold py-3 px-8 text-sm hover:bg-gray-800 transition">REJECT</button>
+                    <button onclick="closePrivacyPopup()" class="bg-black text-white font-bold py-3 px-8 text-sm hover:bg-gray-800 transition">YOUR PRIVACY CHOICES</button>
+                </div>
+                <div class="text-center mt-12 bg-gray-50 -mx-8 -mb-8 px-8 pb-8">
+                    <a href="#" class="text-gray-500 text-sm underline hover:text-black transition">Privacy Policy</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <header id="main-header" class="bg-white w-full z-40 transition-opacity duration-300 opacity-50 pointer-events-none">
+        <!-- Top Utility Bar -->
+        <div class="flex justify-between items-center py-4 px-6 md:px-12 max-w-screen-2xl mx-auto">
+            <!-- Logo -->
+            <a href="#">
+                <img src="https://res.cloudinary.com/dhx58lnzb/image/upload/v1784781496/hooderlogoeditpng_pajk2a.png" alt="EDIT Logo" class="logo-img">
+            </a>
+            
+            <!-- Right Actions -->
+            <div class="flex items-center space-x-6 text-sm font-bold tracking-wider">
+                <a href="#" class="text-red-600 hover:text-red-800 hidden md:block">NEWSLETTERS</a>
+                <a href="#" class="bg-red-600 text-white px-4 py-2 hover:bg-red-700 hidden md:block">MEMBERSHIP</a>
+                <a href="#" class="text-red-600 hover:text-red-800 hidden md:block">SIGN IN</a>
+                <button class="text-black text-2xl hover:text-gray-600 focus:outline-none">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Navigation Categories -->
+        <div class="border-t border-b border-gray-200">
+            <nav class="max-w-screen-2xl mx-auto px-6 md:px-12 py-3 overflow-x-auto whitespace-nowrap">
+                <ul class="flex space-x-8 text-xs md:text-sm font-bold tracking-widest text-black">
+                    <li><a href="#" class="hover:text-gray-500 transition">BYSTANDER</a></li>
+                    <li><a href="#" class="hover:text-gray-500 transition">STYLE</a></li>
+                    <li><a href="#" class="hover:text-gray-500 transition">BEAUTY</a></li>
+                    <li><a href="#" class="hover:text-gray-500 transition">ROYALS</a></li>
+                    <li><a href="#" class="hover:text-gray-500 transition">FEATURES</a></li>
+                    <li><a href="#" class="hover:text-gray-500 transition">ADDRESS BOOK</a></li>
+                    <li><a href="#" class="hover:text-gray-500 transition">TRAVEL</a></li>
+                    <li><a href="#" class="hover:text-gray-500 transition">SCHOOLS</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main id="main-content" class="flex-grow flex items-center justify-center p-8 opacity-50 pointer-events-none transition-opacity duration-300">
+        <div class="text-center max-w-2xl">
+            <h2 class="font-serif text-3xl mb-4 text-gray-800">Welcome to EDIT</h2>
+            <p class="text-gray-600">Please accept the privacy policy to access the content.</p>
+        </div>
+    </main>
+
+    <footer id="main-footer" class="bg-black text-white w-full opacity-50 pointer-events-none transition-opacity duration-300">
+        <div class="max-w-screen-2xl mx-auto px-6 md:px-12 py-12">
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
+                <!-- Column 1: Logo & Socials -->
+                <div class="flex flex-col space-y-8">
+                    <img src="https://res.cloudinary.com/dhx58lnzb/image/upload/v1784781496/hooderlogoeditpng_pajk2a.png" alt="EDIT Logo" class="logo-img filter invert">
+                    <div class="flex space-x-6 text-2xl">
+                        <!-- Only Instagram is visible as requested -->
+                        <a href="https://o" class="hover:text-gray-400 transition" aria-label="Instagram">
+                            <i class="fa-brands fa-instagram"></i>
+                        </a>
+                        <!-- Hiding others based on prompt: "la unica red social que aparesca en el footer sea instagram" -->
+                        <!-- <a href="#" class="hover:text-gray-400 transition"><i class="fa-brands fa-facebook-f"></i></a> -->
+                        <!-- <a href="#" class="hover:text-gray-400 transition"><i class="fa-brands fa-pinterest-p"></i></a> -->
+                        <!-- <a href="#" class="hover:text-gray-400 transition"><i class="fa-brands fa-x-twitter"></i></a> -->
+                        <!-- <a href="#" class="hover:text-gray-400 transition"><i class="fa-brands fa-youtube"></i></a> -->
+                    </div>
+                </div>
+
+                <!-- Column 2: More from EDIT -->
+                <div>
+                    <h3 class="text-sm font-bold tracking-widest mb-6">MORE FROM EDIT</h3>
+                    <ul class="space-y-3 text-sm text-gray-300">
+                        <li><a href="#" class="footer-link">Newsletters</a></li>
+                        <li><a href="#" class="footer-link">Subscribe</a></li>
+                        <li><a href="#" class="footer-link">FAQ</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 3: Contact -->
+                <div>
+                    <h3 class="text-sm font-bold tracking-widest mb-6">CONTACT</h3>
+                    <ul class="space-y-3 text-sm text-gray-300">
+                        <li><a href="#" class="footer-link">Contact Us</a></li>
+                        <li><a href="#" class="footer-link">Contact the Address Book Team</a></li>
+                        <li><a href="#" class="footer-link">Careers</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-gray-400">
+                <div class="flex flex-wrap items-center justify-center md:justify-start gap-4 mb-4 md:mb-0">
+                    <a href="#" class="footer-link">Privacy notice and cookie statement</a>
+                    <span class="hidden md:inline">|</span>
+                    <a href="#" class="footer-link">Code of Conduct</a>
+                    <span class="hidden md:inline">|</span>
+                    <a href="#" class="footer-link">Terms & conditions</a>
+                    <span class="hidden md:inline">|</span>
+                    <a href="#" class="footer-link">Editorial Complaints Policy</a>
+                    <span class="hidden md:inline">|</span>
+                    <a href="#" class="footer-link">Site Map</a>
+                    <span class="hidden md:inline">|</span>
+                    <a href="#" class="flex items-center gap-2 footer-link font-bold text-gray-300 hover:text-white">
+                        <i class="fa-solid fa-toggle-on text-blue-500"></i> YOUR PRIVACY CHOICES
+                    </a>
+                </div>
+                <div class="text-center md:text-right">
+                    &copy; Condé Nast Britain 2026
+                </div>
+            </div>
+            
+            <!-- Bottom decorative line -->
+            <div class="mt-8 flex justify-center">
+                 <div class="w-8 h-1 border-b-2 border-gray-600 rounded-full"></div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Function to handle closing the privacy popup
+        function closePrivacyPopup() {
+            // Hide the overlay
+            const overlay = document.getElementById('privacy-overlay');
+            overlay.classList.add('hidden');
+            
+            // Re-enable scrolling on body
+            document.body.classList.remove('overflow-hidden');
+            
+            // Make header, main content, and footer fully opaque and clickable
+            document.getElementById('main-header').classList.remove('opacity-50', 'pointer-events-none');
+            document.getElementById('main-content').classList.remove('opacity-50', 'pointer-events-none');
+            document.getElementById('main-footer').classList.remove('opacity-50', 'pointer-events-none');
+        }
+
+        // Initialize state on load
+        document.addEventListener('DOMContentLoaded', () => {
+            // Ensure body is non-scrollable when popup is active
+            document.body.classList.add('overflow-hidden');
+        });
+    </script>
+</body>
+</html>
