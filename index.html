@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Edit - La red social original | Edit</title>
+    <title>Edit - La red social original | Edit México y Latinoamérica</title>
     
     <!-- Fragmento de código de AdSense -->
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4378526640202660" crossorigin="anonymous"></script>
@@ -11,7 +11,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Roboto:wght@300;400;500;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Roboto:wght@300;400;500;700&family=Jost:wght@400;500;600&display=swap');
 
         body {
             font-family: 'Roboto', sans-serif;
@@ -20,6 +20,10 @@
 
         .font-serif {
             font-family: 'Playfair Display', serif;
+        }
+
+        .font-jost {
+            font-family: 'Jost', sans-serif;
         }
 
         .logo-font {
@@ -44,10 +48,10 @@
         }
         
         /* Custom red color matching the image */
-        .text-tatler-red {
+        .text-edit-red {
             color: #cc0000;
         }
-        .bg-tatler-red {
+        .bg-edit-red {
             background-color: #cc0000;
         }
     </style>
@@ -91,26 +95,27 @@
     </div>
 
     <!-- Header ajustado idéntico a la foto de referencia -->
-    <header id="main-header" class="bg-white w-full z-40 transition-opacity duration-300 opacity-50 pointer-events-none">
+    <header id="main-header" class="sticky top-0 bg-white w-full z-40 transition-all duration-300 shadow-sm opacity-50 pointer-events-none">
         
         <!-- Línea superior oscura -->
         <div class="h-[2px] bg-[#333] w-full"></div>
 
         <!-- Main Header Area -->
-        <div class="flex justify-between items-center py-5 px-6 md:px-12 max-w-screen-2xl mx-auto">
+        <div id="header-container" class="flex justify-between items-center py-2 px-6 md:px-12 max-w-screen-2xl mx-auto transition-all duration-300">
             
             <!-- Logo - Alineado a la izquierda -->
             <div class="flex-shrink-0">
                 <a href="#">
-                    <img src="https://res.cloudinary.com/dhx58lnzb/image/upload/v1784781496/hooderlogoeditpng_pajk2a.png" alt="Logo de EDIT" class="h-16 md:h-24 lg:h-28 w-auto object-contain">
+                    <!-- Aumenté drásticamente la altura a 220px en escritorio -->
+                    <img id="header-logo" src="https://res.cloudinary.com/dhx58lnzb/image/upload/v1784781496/hooderlogoeditpng_pajk2a.png" alt="Logo de EDIT" class="h-28 md:h-[220px] w-auto object-contain transition-all duration-300">
                 </a>
             </div>
             
             <!-- Botones derechos y menú hamburguesa -->
             <div class="flex items-center space-x-6 text-[11px] md:text-xs font-bold tracking-[0.15em] ml-auto">
-                <a href="#" class="text-tatler-red hover:text-red-800 hidden md:block">BOLETINES</a>
-                <a href="#" class="bg-tatler-red text-white px-4 py-2 hover:bg-red-800 hidden md:block">MEMBRESÍA</a>
-                <a href="#" class="text-tatler-red hover:text-red-800 hidden md:block">INICIAR SESIÓN</a>
+                <a href="#" class="text-edit-red hover:text-red-800 hidden md:block">BOLETINES</a>
+                <a href="#" class="bg-edit-red text-white px-4 py-2 hover:bg-red-800 hidden md:block">MEMBRESÍA</a>
+                <a href="#" class="text-edit-red hover:text-red-800 hidden md:block">INICIAR SESIÓN</a>
                 
                 <!-- Hamburger Menu -->
                 <button class="text-black ml-2 hover:text-gray-600 focus:outline-none flex flex-col justify-center gap-[5px] h-8 w-6">
@@ -124,25 +129,46 @@
         <!-- Categorías de Navegación -->
         <div class="border-t border-b border-gray-200">
             <nav class="max-w-screen-2xl mx-auto px-6 md:px-12 py-3 overflow-x-auto whitespace-nowrap">
-                <ul class="flex space-x-6 md:space-x-8 text-[11px] font-bold tracking-[0.15em] text-black">
-                    <li><a href="#" class="hover:text-gray-500 transition">ESPECTADOR</a></li>
-                    <li><a href="#" class="hover:text-gray-500 transition">ESTILO</a></li>
+                <ul class="flex justify-center md:justify-end space-x-6 md:space-x-8 text-[11px] font-bold tracking-[0.15em] text-black">
+                    <li><a href="#" class="hover:text-gray-500 transition">MODA</a></li>
                     <li><a href="#" class="hover:text-gray-500 transition">BELLEZA</a></li>
-                    <li><a href="#" class="hover:text-gray-500 transition">REALEZA</a></li>
-                    <li><a href="#" class="hover:text-gray-500 transition">REPORTAJES</a></li>
-                    <li><a href="#" class="hover:text-gray-500 transition">DIRECTORIO</a></li>
-                    <li><a href="#" class="hover:text-gray-500 transition">VIAJES</a></li>
-                    <li><a href="#" class="hover:text-gray-500 transition">COLEGIOS</a></li>
+                    <li><a href="#" class="hover:text-gray-500 transition">ESTILO DE VIDA</a></li>
+                    <li><a href="#" class="hover:text-gray-500 transition">COMPRAS</a></li>
+                    <li><a href="#" class="hover:text-gray-500 transition">(RE)EDIT</a></li>
+                    <li><a href="#" class="hover:text-gray-500 transition">HOLLYWOOD</a></li>
+                    <li><a href="#" class="hover:text-gray-500 transition">PODCAST</a></li>
+                    <li><a href="#" class="hover:text-gray-500 transition">VIDEOS</a></li>
+                    <li><a href="#" class="hover:text-gray-500 transition">ESPACIO EDIT</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <main id="main-content" class="flex-grow flex items-center justify-center p-8 opacity-50 pointer-events-none transition-opacity duration-300">
-        <div class="text-center max-w-2xl">
-            <h2 class="font-serif text-3xl mb-4 text-gray-800">Bienvenidos a EDIT</h2>
-            <p class="text-gray-600">Por favor, acepta la política de privacidad para acceder al contenido.</p>
-        </div>
+    <main id="main-content" class="flex-grow flex flex-col items-center justify-start w-full opacity-50 pointer-events-none transition-opacity duration-300 bg-white">
+        <!-- Artículo Principal (Hero Section) -->
+        <article class="w-full max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 pt-6 pb-16">
+            <!-- Imagen Principal -->
+            <div class="w-full flex justify-center mb-8">
+                <img src="https://res.cloudinary.com/dhx58lnzb/image/upload/v1784782503/Gala-Vogue-de-Dia-de-Muertos-2026_qxwyf7.webp" alt="Gala EDIT de Día de Muertos 2026" class="w-full max-w-5xl h-auto object-cover">
+            </div>
+            
+            <!-- Metadatos y Título del Artículo (Tipografía exacta de la captura) -->
+            <div class="text-center flex flex-col items-center px-4 font-jost text-black">
+                <!-- Categoría -->
+                <span class="text-[11px] md:text-[13px] font-medium tracking-[0.2em] uppercase mb-4">DÍA DE MUERTOS</span>
+                
+                <!-- Título -->
+                <h1 class="text-[26px] md:text-4xl lg:text-[44px] font-normal mb-6 tracking-normal leading-tight max-w-4xl">
+                    Todo sobre la Gala EDIT de Día de Muertos 2026
+                </h1>
+                
+                <!-- Autor -->
+                <span class="text-[10px] md:text-[12px] font-medium tracking-[0.15em] uppercase mb-1">POR ATENEA MORALES DE LA CRUZ</span>
+                
+                <!-- Fecha -->
+                <time class="text-[12px] md:text-[14px] font-normal" datetime="2026-07-22">22 de julio de 2026</time>
+            </div>
+        </article>
     </main>
 
     <footer id="main-footer" class="bg-black text-white w-full opacity-50 pointer-events-none transition-opacity duration-300">
@@ -202,8 +228,8 @@
                         <i class="fa-solid fa-toggle-on text-blue-500"></i> TUS OPCIONES DE PRIVACIDAD
                     </a>
                 </div>
-                <div class="text-center md:text-right">
-                    &copy; Condé Nast Britain 2026
+                <div class="text-center md:text-right font-jost">
+                    &copy; Maison Condor 2026
                 </div>
             </div>
             
@@ -234,6 +260,29 @@
         document.addEventListener('DOMContentLoaded', () => {
             // Ensure body is non-scrollable when popup is active
             document.body.classList.add('overflow-hidden');
+            
+            // Lógica para el efecto de achicar el encabezado al hacer scroll
+            window.addEventListener('scroll', () => {
+                const headerContainer = document.getElementById('header-container');
+                const headerLogo = document.getElementById('header-logo');
+                
+                if (window.scrollY > 50) {
+                    // Si el usuario baja, achicar márgenes y logo
+                    headerContainer.classList.remove('py-2');
+                    headerContainer.classList.add('py-1');
+                    
+                    // Clases actualizadas para coincidir con el nuevo tamaño masivo
+                    headerLogo.classList.remove('h-28', 'md:h-[220px]');
+                    headerLogo.classList.add('h-12', 'md:h-20');
+                } else {
+                    // Si el usuario regresa hasta arriba, restaurar tamaño original masivo
+                    headerContainer.classList.add('py-2');
+                    headerContainer.classList.remove('py-1');
+                    
+                    headerLogo.classList.add('h-28', 'md:h-[220px]');
+                    headerLogo.classList.remove('h-12', 'md:h-20');
+                }
+            });
         });
     </script>
 </body>
